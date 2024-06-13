@@ -8,10 +8,10 @@ class SimilarityChecker:
     def calc(self, str1, str2):
         score = 0
         self.check_valid(str1, str2)
-        score += self.check_legth(str1, str2)
+        score += self.check_alpha(str1, str2)
         return score
 
-    def check_legth(self, str1, str2):
+    def check_alpha(self, str1, str2):
         return int(len(set(str1).intersection(set(str2))) / len(set(str1 + str2)) * 40)
 
 
