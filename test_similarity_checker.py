@@ -17,3 +17,5 @@ class TestSimilarityChecker(TestCase):
     def test_exception_when_input_is_none(self):
         self.assert_not_exception('ABC', None)
         self.assert_not_exception(None, 'ABC')
+        self.assert_not_exception('123', 'ABC')
+        self.assert_not_exception('abc', 'ABC')
