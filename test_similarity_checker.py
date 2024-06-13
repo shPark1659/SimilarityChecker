@@ -23,6 +23,6 @@ class TestSimilarityChecker(TestCase):
 
     def test_calc_length_score(self):
         self.assertEqual(self.similarity_checker.calc('ASD', 'DSA'), 60)
-        # self.assertEqual(self.similarity_checker.calc('A', 'BB'), 0)
-        # self.assertEqual(self.similarity_checker.calc('AAABB', 'BAA'), 20)
+        self.assertEqual(self.similarity_checker.calc('A', 'BB'), 0)
+        self.assertEqual(self.similarity_checker.calc('AAABB', 'BAA'), 20)
         # self.assertEqual(self.similarity_checker.calc('AA', 'AAE'), 30)
