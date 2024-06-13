@@ -8,16 +8,10 @@ class SimilarityChecker:
     def calc(self, str1, str2):
         score = 0
         self.check_valid(str1, str2)
-
-        short, long = (len(str2), len(str1)) if len(str1) >= len(str2) else (len(str1), len(str2))
-        if short == long:
-            score += 60
-        elif long >= short * 2:
-            pass
-        else:
-            score += int(60 * (2 * short - long) / short)
+        score += self.check_length(str1, str2)
         return score
 
-
-
-
+    def check_length(self, str1, str2):
+        short = min(len(str1), len(str2))
+        long = max(len(str1), len(str2))
+        return int(min(1, max(0, (2 * short - long) / short)) * 60)
